@@ -5,6 +5,6 @@ module.exports = async function remoteSocketLocation (socket) {
     await awaitEvent(socket, 'connect')
   }
 
-  const { remoteAddress, remotePort } = socket
-  return `${remoteAddress}:${remotePort}`
+  const { _host, remotePort } = socket
+  return `${_host}:${remotePort}`
 }
